@@ -2,13 +2,12 @@
 <br />
 <div align="center">
   <a href="https://github.com/dottdottdott/trads">
-    <img src="https://github.com/dottdottdott/trads/raw/master/_logos/solid-logo-orange.svg" alt="TrADS" height="80">
+    <img src="https://raw.githubusercontent.com/dottdottdott/trads/main/_logo/solid-logo-orange.svg" alt="TrADS" height="80">
   </a>
   <h2>TrADS</h2>
   <p>
     Trust-Aware Decentralized Social network
     <!--<br />
-    <br />
     <a href="https://vsr.informatik.tu-chemnitz.de/projects/2024/trads/">View Demo</a>
     ·
     <a href="mailto:dirk.leichsenring@informatik.tu-chemnitz.de?subject=Issue on TrADS">Report Bug</a>
