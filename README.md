@@ -7,7 +7,7 @@
   <h2>TrADS</h2>
   <p>
     Trust-Aware Decentralized Social network
-    <!--<br />
+    <br />
     <a href="https://vsr.informatik.tu-chemnitz.de/projects/2024/trads/">View Demo</a>
     ·
     <a href="mailto:dirk.leichsenring@informatik.tu-chemnitz.de?subject=Issue on TrADS">Report Bug</a>
