@@ -1,0 +1,40 @@
+{% extends 'shared/full_layout.html' %}
+{% load custom_filter %}
+
+{% block title %}About TrADS{% endblock %}
+
+{% block head %}
+{% load static %}
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block main %}
+
+<div class="small-block centerd-block">
+<h1 class="center">About TrADS</h1>
+
+
+    <p>TrADS (Trust Aware Decentralized Social network) was created as part of a masters thesis.</p>
+    <p>If have any questsions about this demo, we are available via <a href="mailto:dlei@reddott.de">email</a>.</p>
+    <br>
+    <p>The following resources and technologies where used for the creation of this demo:</p>
+    <ul>
+        <li><a target="_blank" href="https://www.djangoproject.com/">Django web framework</a></li>
+        <li><a target="_blank" href="https://github.com/twonote/solid-file-python">Solid File Python</a></li>
+        <li><a target="_blank" href="https://picnicss.com/">Picnic CSS</a></li>
+        <li><a target="_blank" href="https://fontawesome.com/">Fontsawesome</a></li>
+        <li><a target="_blank" href="http://clrs.cc/">Clrs color palette</a></li>
+        <li><a target="_blank" href="https://github.com/Ionaru/easy-markdown-editor">EasyMDE</a></li>
+        <li><a target="_blank" href="https://realnamecreator.alexjonas.de/?l=de#">RealnameCreator</a></li>
+        <li><a target="_blank" href="https://www.pexels.com/">Pexels Stock Images</a></li>
+    </ul>
+</div>
+
+<br>
+{% endblock %}

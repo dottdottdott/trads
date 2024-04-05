@@ -1,0 +1,42 @@
+{% extends 'shared/full_layout.html' %}
+{% load custom_filter %}
+
+{% block title %}Chats{% endblock %}
+
+{% block head %}
+{% load static %}
+<link href="{% static 'style/feed.css' %}" rel="stylesheet" />
+<link href="{% static 'style/easymde.min.css' %}" rel="stylesheet" />
+<script src="{% static 'script/users.js' %}"></script>
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block main %}
+<h1 class="center border-bottom mt-4 pb-2">Overview Chats</h1>
+
+<div class="container center">
+    {% for chat in chats %}
+    {% if chat.correspondent != me.id %}
+        <div class="chat-box center">
+            <div class="user-info">
+                <img class="user-avatar" src="{{ chat.photo }}" alt="{{ chat.name }}">
+                <div class="user-np-box">
+                    <div class="user-nameblock">
+                    <div class="user-name"><a href="{% url 'Chat' chat.correspondent %}">{{ chat.name }}</a></div>
+                    <div class="user-pod">{{ chat.correspondenturl | pod_to_user }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-preview">{{ chat.preview }}</div>
+        </div>
+    {% endif %}
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

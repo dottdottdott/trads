@@ -1,0 +1,46 @@
+{% extends 'shared/full_layout.html' %}
+{% load custom_filter %}
+
+{% block title %}Profile{% endblock %}
+
+{% block head %}
+{% load static %}
+<link href="{% static 'style/feed.css' %}" rel="stylesheet" />
+<link href="{% static 'style/user.css' %}" rel="stylesheet" />
+<link href="{% static 'style/easymde.min.css' %}" rel="stylesheet" />
+<script src="{% static 'script/easymde.min.js' %}"></script>
+<script src="{% static 'script/user.js' %}"></script>
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block main %}
+<div class="container">
+    <div class="author-info">
+        <div class="userhead clearfix">
+            {% if author.photo %}<img src="{{ author.photo }}" alt="Profile picture of {{ author.name }}">{% endif %}
+            <div class="un-nameblock">
+                <h1>{{ author.name }}</h1>
+                <div class="un-p">{{ author.url|pod_to_user }}</div> 
+            </div>
+        </div>
+        <hr>
+        {% if vcard.role %}<div><b>Role:</b> {{ vcard.role }}</div>{% endif %}
+        {% if vcard.telephone %}<div><b>Telefon:</b> {{ vcard.telephone }}</div>{% endif %}
+        {% if vcard.email %}<div><b>E-Mail:</b> {{ vcard.email }}</div>{% endif %}
+        {% if vcard.address %}<div class="address"><b>Adresse:</b> {{ vcard.address|multiline|safe }}</div>{% endif %}
+        {% if vcard.bday %}<div><b>Birthday:</b> {{ vcard.bday }}</div>{% endif %}
+        <a href="{{ author.url }}">Visit Solid-Pod</a>
+    </div>
+
+    <h2 class="sh2">Posts of {{ author.name }}</h2>
+    <div id="feed" class="feed">
+        {% include "blocks/feedblock.html" %}
+    </div>
+</div>
+{% endblock %}

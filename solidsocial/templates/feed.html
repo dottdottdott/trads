@@ -1,0 +1,73 @@
+{% extends 'shared/full_layout.html' %}
+{% load custom_filter %}
+
+{% block title %}Feed{% endblock %}
+
+{% block head %}
+{% load static %}
+<link href="{% static 'style/feed.css' %}" rel="stylesheet" />
+<link href="{% static 'style/easymde.min.css' %}" rel="stylesheet" />
+<script src="{% static 'script/easymde.min.js' %}"></script>
+<script src="{% static 'script/feed.js' %}"></script>
+<script>demo={% if demo %}true{% else %}false{% endif %};</script>
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block main %}
+
+<div class="np-box">
+<label for="np-modal" class="button np-button">Create a new Post</label>
+</div>
+<div class="modal">
+  <input id="np-modal" type="checkbox" />
+  <label for="np-modal" class="overlay"></label>
+  <article>
+    <header>
+      <h3 id="modal-h">Create Post</h3>
+      <label for="np-modal" class="close">&times;</label>
+    </header>
+    <section class="content">
+        <div id="ref-box"></div>
+        <div class="newpost">
+            <form class="new-post-form">
+            <textarea id="np-text"></textarea>_
+            <input title="Add image to post" id="np-media" type="file" accept="image/*">
+            <label>
+                <input id="np-sign" type="checkbox">
+                <span class="checkable">sign post</span>
+            </label>
+            <label style="display: none;">
+                <input id="np-priv" type="checkbox">
+                <span class="checkable">limit visibility</span>
+            </label>
+            <input type="hidden" id="postId" name="ref" value="" />
+            </form>
+        </div>
+
+    </section>
+    <footer>
+      <a class="button" id="np-submit" href="#">Post</a>
+      <label id="modal-close" for="np-modal" class="button dangerous">
+        Cancel
+      </label>
+    </footer>
+  </article>
+</div>
+
+<br>
+<div class="container">
+    <div id="feed" class="feed">
+        {% include "blocks/feedblock.html" %}
+    </div>
+    <div class="centered np-box">
+        <button aria-label="Mehr Posts laden" id="feed-more" class='morefeed'>More</button>
+    </div>
+    
+</div>
+{% endblock %}

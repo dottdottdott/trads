@@ -1,0 +1,13 @@
+{% load custom_filter %}
+<div id="{{ post.id }}-post" class="post">
+    {% include "blocks/feedpostuserinfo.html" %}
+    <div class="post-content">
+        {% if post.media %}
+        <div class="post-image-box">
+            <img class="post-image" alt="Post Image" src="{{ post.media }}">
+        </div>
+        {% endif %}
+        {{ post.content|md_to_html|safe }}
+    </div>
+    {% include "blocks/feedpostbottom.html" %}
+</div>

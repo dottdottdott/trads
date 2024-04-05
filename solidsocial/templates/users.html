@@ -1,0 +1,58 @@
+{% extends 'shared/full_layout.html' %}
+{% load custom_filter %}
+
+{% block title %}Users{% endblock %}
+
+{% block head %}
+{% load static %}
+<link href="{% static 'style/feed.css' %}" rel="stylesheet" />
+<link href="{% static 'style/easymde.min.css' %}" rel="stylesheet" />
+{% if demo %}<script src="{% static 'script/usersdemo.js' %}"></script>{% else %}
+<script src="{% static 'script/users.js' %}"></script>{% endif %}
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block main %}
+<h1 class="center border-bottom mt-4 pb-2">User overview</h1>
+<div class="container centerd-block">
+    <div class="aa-box flex">
+        <label><input id="aa-webid" type="text" placeholder="WebID of user"></label>
+        <button class="mute aa-button" id="add-author"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <br>
+    <label>
+        <input id="showall" type="checkbox">
+        <span class="toggle pseudo button">Show all known users</span>
+    </label>
+
+    <table class="primary">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Username</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="users-tb">
+    {% for author in authors %}
+    <tr class="usertr{% if not author.followed %} not_followed" style="display: none;{% endif %}" id="at-{{ author.id }}">
+                <td><img class="small-up" src="{{ author.photo }}"></td>
+                <td><a href="{% url 'User'  author.id %}">{{ author.name }}</a></td>
+                <td><a href="{{ author.url }}">{{ author.url|pod_to_user }}</a></td>
+                <td>
+                    <button class="follow{% if not author.followed %} mute{% endif %}" id="{{ author.id }}-follow"><i class="fa-solid fa-user-plus"></i></button>
+                    <button class="u-remove mute" id="{{ author.id }}-remove"><i class="fa-solid fa-user-slash"></i></button>
+                </td>
+            </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% endblock %}

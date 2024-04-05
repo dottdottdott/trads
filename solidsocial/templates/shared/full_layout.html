@@ -1,0 +1,16 @@
+{% extends 'shared/layout.html' %}
+
+{% block body %}
+<main class="main-block">
+    <section class="flex">
+        <div class="full">
+            {% block main %}{% endblock main %}
+            {% include 'shared/footer.html' %}
+        </div>
+    </section>
+</main>
+{% endblock body %}
+
+{% block scripts_outer %}
+{% block scripts %}{% endblock scripts %}
+{% endblock scripts_outer %}

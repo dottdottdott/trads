@@ -1,0 +1,14 @@
+{% load custom_filter %}
+    {% for post in posts %}
+    {% if post.id not in responded %}
+    {% if post.trust_value < 0 %}<button class="collapsible">Post was hidden from the feed</button><div class="coll-content">
+        <p class="coll-warning">Caution: This Post has been flagged as untrustworthy.</p>
+    {% endif %}
+        {% if post.response %}
+            {% include "blocks/reactionpost.html" with author=authors|keyvalue:post.author %}
+        {% else %}
+            {% include "blocks/feedpost.html" with author=authors|keyvalue:post.author %}
+        {% endif %}
+    {% if post.trust_value < 0 %}</div>{% endif %}
+    {% endif %}
+    {% endfor %}

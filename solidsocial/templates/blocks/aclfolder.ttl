@@ -1,0 +1,28 @@
+@prefix : <#>.
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix c: </profile/card#>.
+
+{% if inbox %}
+:Append
+    a acl:Authorization;
+    acl:accessTo <./>;
+    acl:agentClass acl:AuthenticatedAgent;
+    acl:default <./>;
+    acl:mode acl:Append.
+{% endif %}
+:ControlReadWrite
+    a acl:Authorization;
+    acl:accessTo <./>;
+    acl:agent c:me;
+    acl:default <./>;
+    acl:mode acl:Control, acl:Read, acl:Write.
+{% if public %}
+:Read
+    a acl:Authorization;
+    acl:accessTo <./>;
+    acl:agentClass foaf:Agent;
+    acl:default <./>;
+    acl:mode acl:Read.
+{% endif %}
+

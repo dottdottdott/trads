@@ -1,0 +1,12 @@
+{% load custom_filter %}
+    <div class="user-info">
+        <img class="user-avatar" src="{{ author.photo }}" alt="{{ author.name }}">
+        <div class="user-np-box">
+            <div class="user-nameblock">
+            <div class="user-name"><a href="{% url 'User'  author.id %}">{{ author.name }}</a></div>
+            <div class="user-pod">{{ author.url|pod_to_user }}</div>
+            </div>
+            {% if author.id != me.id %}{{ post.trust_value|trust_to_class|safe }}{% else %}
+            <button class="del-own" id="{{ post.id }}-del"><i class="fa-solid fa-trash-can"></i></button>{% endif %}
+        </div>
+    </div>

@@ -1,0 +1,14 @@
+<nav>
+	<img src="{% url 'Logo' %}" alt="SVG Solid Logo" class="head-img" >
+	<a href="{% url 'Feed' %}" class="head-logo">
+        <span>TrADS</span>
+    </a>
+    <input id="bmenu" type="checkbox" class="show">
+    <label for="bmenu" class="burger toggle pseudo button"><i class="fa-solid fa-bars"></i></label>
+    <div class="menu">
+	    <a href="{% url 'Feed' %}" class="{% if current == "Feed" %}active-nav {% endif %}pseudo button icon-help-circled">Feed</a>
+	    <a href="{% url 'Chats' %}" class="{% if current == "Chats" %}active-nav {% endif %}pseudo button icon-help-circled">Chats</a>
+	    <a href="{% url 'Users' %}" class="{% if current == "Users" %}active-nav {% endif %}pseudo button icon-g">Users</a>
+        <a href="{% url 'User'  me.id %}" class="{% if current == "User" %}active-nav {% endif %}pseudo button icon-g">Profile</a>
+    </div>
+</nav>

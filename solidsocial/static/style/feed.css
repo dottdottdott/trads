@@ -1,0 +1,205 @@
+.feed {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.post {
+    margin: 12px 0 12px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    box-shadow: 2px 2px #aaaaaa;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-avatar {
+    max-width: 75px;
+    max-height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex: 0 0 auto;
+}
+
+.user-np-box {
+    display: flex;
+    flex: 1;
+}
+
+.user-pod {
+    font-size: 14px;
+    color: #757575;
+    font-style: italic;
+}
+
+.user-name {
+    color: #0074d9;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button.del-own {
+    font-size: 12px;
+    height: auto;
+    max-height: 30px;
+    aspect-ratio : 1 / 1;
+    padding: 5px;
+    margin-left: auto;
+    color: #85144b;
+    border: 1px solid #85144b;
+    border-radius: 5px;
+    background-color: white;
+}
+
+button.del-own:hover {
+    background-color: #85144b;
+    color: white;
+    
+}
+
+.post-image-box {
+  display: flex;
+  justify-content: center;
+}
+
+.post-text {
+    font-size: 16px;
+}
+
+.post-content {
+    margin: 10px 0 10px 0
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #757575;
+}
+
+.editor-toolbar button {
+    color: #333
+}
+
+.post-controls {
+    display: block;
+}
+
+.post-controls > button {
+    background: white;
+    color: #7fdbff;
+}
+
+.post-controls > button.liked {
+    color: #39aaaa;
+}
+
+.post-likes {
+    display: inline;
+    font-weight: bold;
+    color: #39aaaa;
+}
+
+.picbox {
+    max-width: 100px;
+    display: inline;
+}
+
+.collapsible {
+    background-color: #aaaaaa;
+    color: #363636;
+    cursor: pointer;
+    padding: 4px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+    margin: 5px 0 10px;
+    text-align: center;
+}
+
+.active, .collapsible:hover {
+    color: white;
+    background-color: #757575;
+}
+
+.collapsible.active {
+  margin-bottom: 0px;
+}
+
+.coll-content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #ffe6e6;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.coll-warning {
+   margin: 0; 
+   text-align: center;
+   color: #ff4136;
+}
+
+.preview-image {
+    max-width: 100%;
+    padding: 10px 10px 0 10px;
+}
+
+.post-image {
+    max-width: 100%;
+}
+
+.reaction-p {
+    margin-left: 40px;
+    font-style: italic;
+}
+
+.trust-indicator {
+    margin-left: 10px;
+}
+
+i.t-warn {
+    color: #ff4136;
+}
+
+i.t-attantion {
+    color: #ff851b;
+}
+
+i.t-below {
+    color: #ffdc00;
+}
+
+i.t-neutral {
+    color: #3d9970;
+}
+
+i.t-mid {
+    color: #2ecc40;
+}
+i.t-high {
+    color: #01ff70;
+}
+
+/* Link preview */
+.link-preview div {
+    font-size: 0.9em;
+}
+
+.morefeed {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cente#ff4136 {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}

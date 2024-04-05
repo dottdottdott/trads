@@ -1,0 +1,21 @@
+{% load custom_filter %}
+<div class="reaction-box">
+
+    <div class="post" id="{{ post.id }}-post">
+        {% include "blocks/feedpostuserinfo.html" %}
+        <div class="post-content">
+            <p class="reaction-p">{% if post.content != '' %}has respondet to a post{% else %}has shared a post{% endif %}</p>
+            <div class="inner-post">
+                {% include "blocks/feedpost.html" with post=post.response author=authors|keyvalue:post.response.author %}
+            </div>
+            {% if post.media %}
+            <div class="post-image-box">
+                <img style="max-width: 90%;" class="post-image" alt="Post image" src="{{ post.media }}">
+            </div>
+            {% endif %}
+            {{ post.content|md_to_html|safe }}
+        </div>
+        {% include "blocks/feedpostbottom.html" %}
+    </div>
+
+</div>

@@ -1,0 +1,115 @@
+.main-block > section {
+    width: 92%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 0 0;
+}
+
+button.mute {
+    background: #eee;
+    color: lightblue;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.aa-box {
+    align-items: baseline;
+}
+
+.aa-button {
+    margin: 0;
+    margin-right: auto;
+}
+
+body {
+    background: #fbfffe;
+}
+
+.head-img {
+    width: 60px;
+    height: auto;
+}
+
+.head-logo {
+    text-decoration: none;
+    color: #001f3f;
+    font-weight: bold;
+    font-size: 22px;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.menu {
+    gap: 10px;
+    display: flex;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+
+.np-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.small-up {
+    height: 50px;
+    border: 1px solid #aaaaaa;
+}
+
+.centerd-block {
+    margin: 0 auto;
+}
+
+.small-block{
+    max-width: 600px;
+}
+
+.center {
+    text-align: center;
+}
+
+a.active-nav {
+    background: #ddd !important;
+}
+
+.demo-note {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #aaaaaa;
+}
+
+.chat-box {
+    display: grid;
+}
+
+.chat-preview {
+    margin-top: 20px;
+    color: #444444;
+}

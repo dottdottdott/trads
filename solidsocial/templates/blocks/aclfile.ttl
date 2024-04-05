@@ -1,0 +1,23 @@
+@prefix : <#>.
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+@prefix posts: <./>.
+@prefix c: <{{ webid }}>.
+
+:ControlReadWrite
+    a acl:Authorization;
+    acl:accessTo posts:{{ post }};
+    acl:agent c:me;
+    acl:mode acl:Control, acl:Read, acl:Write.
+{% if authors %}
+:Read
+    a acl:Authorization;
+    acl:accessTo posts:{{ post }};
+    acl:mode acl:Read;
+{% endif %}
+{% for a in authors %}
+{% if forloop.last %}
+    acl:origin <{{ a }}>.
+{% else %}
+    acl:origin <{{ a }}>;
+{% endif %}
+{% endfor %}

@@ -1,0 +1,22 @@
+{% load custom_filter %}
+<div class="post-meta">posted on {{ post.cdate|dateformat }}</div>
+<div class="post-controls" data-ref="{{ post.url }}">
+    {% with reactions|keyvalue:post.id as reactions %}
+    {% with reactions|sublist:'author' as reactors %}
+    <button aria-label="Like Post {{post.id}}" class="{% if me.id in reactors %}liked {% endif %}like-button" id="{{ post.id }}-like"{% if reactors|countwithout:me.id > 0 %} style="padding-right:2px;"{% endif %}><i class="fa-solid fa-thumbs-up"></i></button>
+    <p id="{{ post.id }}-like-counter" class="post-likes"
+        {% if reactors|countwithout:me.id > 0 %}
+        data-tooltip="{% for r in reactors %}
+                {% with authors|keyvalue:r as rp %}
+                {{ rp.name }}{% if not forloop.last	%}, {% endif %}
+                {% endwith %}
+            {% endfor %}
+            "{% endif %}>
+        {% if reactors|countwithout:me.id > 0 %}
+            {{ reactors|countwithout:me.id  }}
+        {% endif %}</p>
+    {% endwith %}
+    {% endwith %}
+    <button aria-label="Antworten auf Post {{post.id}}" class="reply-button" id="{{ post.id }}-reply" data-ref="{{ post.url }}"><i class="fa-solid fa-reply"></i></button>
+    <button aria-label="Post {{post.id}} Teilen" class="share-button" id="{{ post.id }}-share" data-ref="{{ post.url }}"><i class="fa-solid fa-retweet"></i></button>
+</div>
