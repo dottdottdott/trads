@@ -54,12 +54,12 @@ def multiline(data):
     return html
 
 trust_groups = [
-        (-1, "t-warn", "Post wurde als nicht vertrauenswürdig eingestuft"),
-        (2, "t-attantion", "Post ist mit hoher Wahrscheinlichkeit nicht vertrauenswürdig"),
-        (4, "t-below", "Post ist möglicherweise nicht vertrauenswürdig"),
-        (5, "t-neutral", "Post wurde neutral eingestuft"),
-        (7, "t-mid", "Post wurde als vertrauenswürdig eingestuft"),
-        (9, "t-high", "Post wurde als sehr vertrauenswürdig eingestuft"),
+        (-1, "t-warn", "Post was rated untrustworthy"),
+        (2, "t-attantion", "Post is highly unlikely to be trustworthy"),
+        (4, "t-below", "Post may not be trustworthy"),
+        (5, "t-neutral", "Post was rated neutral"),
+        (7, "t-mid", "Post was rated trustworthy"),
+        (9, "t-high", "Post was rated very trustworthy"),
         ]
 
 @register.filter
