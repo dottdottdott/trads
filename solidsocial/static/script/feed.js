@@ -21,6 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    eventifyButtons();
+
+    // Start Feed Update
+    updateFeed(curdatestr);
+
+});
+
+function eventifyButtons () {
     // Post control buttons
     const likebuttons = document.querySelectorAll('button.like-button');
     likebuttons.forEach(el => el.addEventListener('click', event => { reactPost(event,  el)}, false));
@@ -55,11 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } 
         });
     }
-
-    // Start Feed Update
-    updateFeed(curdatestr);
-
-});
+}
 
 function sharePost(e, el) {
     e.preventDefault();
@@ -112,6 +116,7 @@ function loadMoreFeed(e, start) {
     const successfunc = result => {
         const feed = document.getElementById('feed');
         feed.insertAdjacentHTML('beforeend', result);
+        eventifyButtons();
     }
     const end = start + 50;
     fetch_call(`${POSTS_URL}?feed=${end}&start=${start}`, "GET", null, successfunc, null, 'json');
