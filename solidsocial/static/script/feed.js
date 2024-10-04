@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function sharePost(e, el) {
     e.preventDefault();
     const id = get_id(el.id);
-    if (confirm("Möchten sie den Post wirklich Teilen?") == true) {
+    if (confirm("Do you want to repost this post?") == true) {
         document.getElementById('postId').value = id;
         document.getElementById('np-submit').click();
     } 
